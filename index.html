@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>簡單範例</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 載入 Leaflet CSS -->
+  <link rel="stylesheet" href="leaflet/leaflet.css" />
+
+  <script src="leaflet/leaflet.js"></script>
+  <script src="leaflet-kmz-master/dist/leaflet-kmz.js"></script>
+  <script src="leaflet-kml-master/L.KML.js"></script>  <!-- 這是插件主檔，要放在你的專案目錄 -->
+  <script src="tmcw-togeojson/togeojson.umd.js"></script>
+  <style>
+  body {
+      margin: 0;
+      padding: 0;
+  }
+  #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+  }
+  .label-text {
+  background: rgba(255, 250, 200, 0.9);
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  max-width: none; 
+  display: inline-block; /* 讓 span 撐開 */
+  pointer-events: none; /* 避免標籤擋住滑鼠事件 */
+}
+
+  .leaflet-popup-content {
+  font-size: 14px;
+  background-color: rgba(255, 255, 240, 0.9); /* 淡黃色背景 */
+  padding: 8px;
+  line-height: 1.4;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.leaflet-popup-content strong {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+  * {
+    user-select: none;
+    -webkit-user-select: none;  /* Safari / 舊 Chrome */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* 舊 Edge / IE */
+  }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script type='text/javascript'>
+var map;
+
+function GetMap() {
+    //Create a map instance.
+// 建立地圖
+var map = L.map('map', { center: [65, 13], zoom: 5 });
+
+
+// 免費 OpenStreetMap
+var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors'
+});
+
+// 免費 OpenTopoMap
+var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data: © OpenStreetMap contributors, SRTM | Map style: © OpenTopoMap (CC-BY-SA)'
+});
+
+// 把其中一個預設加入地圖
+topoLayer.addTo(map);
+
+// 加入底圖切換控制
+var baseMaps = {
+  "OpenStreetMap": osmLayer,
+  "OpenTopoMap": topoLayer
+};
+
+L.control.layers(baseMaps, null, { collapsed: false }).addTo(map);
+
+
+   fetch('https://cli1976.github.io/carthage-map/2025NorwayV1.kml?ver=' + Date.now())
+    .then(res => res.text())
+    .then(kmltext => {
+        const parser = new DOMParser();
+        const kml = parser.parseFromString(kmltext, 'text/xml');
+        
+        // 用 togeojson 將 KML 轉 GeoJSON
+        const geojson = toGeoJSON.kml(kml);
+        
+        // 建立 geoJson layer，並加 label
+        L.geoJSON(geojson, {
+            onEachFeature: function(feature, layer) {
+                if (feature.geometry.type === "Point") {
+                    const name = feature.properties && feature.properties.name ? feature.properties.name : '';
+                    if (name) {
+                        L.marker(layer.getLatLng(), {
+                            icon: L.divIcon({
+                                className: 'label-text',
+                                html: `<span>${name}</span>`,
+                                iconSize:null
+                            })
+                        }).addTo(map);
+                    }
+                }
+                // 綁定 popup 也可以一起用
+                let popupContent = '';
+                if (feature.properties && feature.properties.name) {
+                    popupContent += `<strong>${feature.properties.name}</strong>`;
+                }
+                if (feature.properties && feature.properties.description) {
+                    popupContent += `<br>${feature.properties.description}`;
+                }
+                if (popupContent) {
+                    layer.bindPopup(popupContent);
+                }
+            }
+        }).addTo(map);
+
+        // fit bounds
+        const bounds = L.geoJSON(geojson).getBounds();
+        map.fitBounds(bounds);
+    });
+    map.locate({ setView: true, maxZoom: 16 });
+
+map.on('locationfound', function(e) {
+  L.marker(e.latlng).addTo(map)
+    .bindPopup("你現在在這裡！").openPopup();
+});
+
+map.on('locationerror', function(e) {
+  alert("無法取得你的定位：" + e.message);
+});
+
+    }
+    window.onload = GetMap;
+</script>
+
+</body>
+</html>
