@@ -77,7 +77,7 @@
         <styleUrl>#icon-1504-0288D1-nodesc-highlight</styleUrl>
       </Pair>
     </StyleMap>
-    <Style id="icon-1521-FF5252-nodesc-normal">
+    <Style id="icon-1521-FF5252-normal">
       <IconStyle>
         <color>ff5252ff</color>
         <scale>1</scale>
@@ -88,11 +88,8 @@
       <LabelStyle>
         <scale>0</scale>
       </LabelStyle>
-      <BalloonStyle>
-        <text><![CDATA[<h3>$[name]</h3>]]></text>
-      </BalloonStyle>
     </Style>
-    <Style id="icon-1521-FF5252-nodesc-highlight">
+    <Style id="icon-1521-FF5252-highlight">
       <IconStyle>
         <color>ff5252ff</color>
         <scale>1</scale>
@@ -103,52 +100,15 @@
       <LabelStyle>
         <scale>1</scale>
       </LabelStyle>
-      <BalloonStyle>
-        <text><![CDATA[<h3>$[name]</h3>]]></text>
-      </BalloonStyle>
     </Style>
-    <StyleMap id="icon-1521-FF5252-nodesc">
+    <StyleMap id="icon-1521-FF5252">
       <Pair>
         <key>normal</key>
-        <styleUrl>#icon-1521-FF5252-nodesc-normal</styleUrl>
+        <styleUrl>#icon-1521-FF5252-normal</styleUrl>
       </Pair>
       <Pair>
         <key>highlight</key>
-        <styleUrl>#icon-1521-FF5252-nodesc-highlight</styleUrl>
-      </Pair>
-    </StyleMap>
-    <Style id="icon-1523-0288D1-normal">
-      <IconStyle>
-        <color>ffd18802</color>
-        <scale>1</scale>
-        <Icon>
-          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
-        </Icon>
-      </IconStyle>
-      <LabelStyle>
-        <scale>0</scale>
-      </LabelStyle>
-    </Style>
-    <Style id="icon-1523-0288D1-highlight">
-      <IconStyle>
-        <color>ffd18802</color>
-        <scale>1</scale>
-        <Icon>
-          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
-        </Icon>
-      </IconStyle>
-      <LabelStyle>
-        <scale>1</scale>
-      </LabelStyle>
-    </Style>
-    <StyleMap id="icon-1523-0288D1">
-      <Pair>
-        <key>normal</key>
-        <styleUrl>#icon-1523-0288D1-normal</styleUrl>
-      </Pair>
-      <Pair>
-        <key>highlight</key>
-        <styleUrl>#icon-1523-0288D1-highlight</styleUrl>
+        <styleUrl>#icon-1521-FF5252-highlight</styleUrl>
       </Pair>
     </StyleMap>
     <Style id="icon-1528-0288D1-normal">
@@ -253,7 +213,7 @@
         <styleUrl>#icon-1636-0288D1-highlight</styleUrl>
       </Pair>
     </StyleMap>
-    <Style id="icon-1636-E65100-nodesc-normal">
+    <Style id="icon-1636-E65100-normal">
       <IconStyle>
         <color>ff0051e6</color>
         <scale>1</scale>
@@ -264,11 +224,8 @@
       <LabelStyle>
         <scale>0</scale>
       </LabelStyle>
-      <BalloonStyle>
-        <text><![CDATA[<h3>$[name]</h3>]]></text>
-      </BalloonStyle>
     </Style>
-    <Style id="icon-1636-E65100-nodesc-highlight">
+    <Style id="icon-1636-E65100-highlight">
       <IconStyle>
         <color>ff0051e6</color>
         <scale>1</scale>
@@ -279,18 +236,15 @@
       <LabelStyle>
         <scale>1</scale>
       </LabelStyle>
-      <BalloonStyle>
-        <text><![CDATA[<h3>$[name]</h3>]]></text>
-      </BalloonStyle>
     </Style>
-    <StyleMap id="icon-1636-E65100-nodesc">
+    <StyleMap id="icon-1636-E65100">
       <Pair>
         <key>normal</key>
-        <styleUrl>#icon-1636-E65100-nodesc-normal</styleUrl>
+        <styleUrl>#icon-1636-E65100-normal</styleUrl>
       </Pair>
       <Pair>
         <key>highlight</key>
-        <styleUrl>#icon-1636-E65100-nodesc-highlight</styleUrl>
+        <styleUrl>#icon-1636-E65100-highlight</styleUrl>
       </Pair>
     </StyleMap>
     <Style id="icon-1670-0288D1-normal">
@@ -749,7 +703,7 @@
       </Placemark>
       <Placemark>
         <name>Eliassen Rorbuer</name>
-        <description>3rd-4th 住宿</description>
+        <description><![CDATA[3rd-4th 住宿<br>Rorbuer 傳統挪威漁屋 傳統挪威漁⺠使⽤的季節性房屋，通常位於漁村。這些建築物是建造在陸地上，但房⼦的⼀端通常是在岸邊，可以⽅便地讓船靠近。在沿挪威西部和北部海岸常⾒，顏⾊以挪威國旗顏⾊紅⾊裝飾。隨著時代演進，傳統漁屋⽤於捕⿂已經減少，⽽是出租給遊客居住使⽤。]]></description>
         <styleUrl>#icon-1602-FFD600</styleUrl>
         <Point>
           <coordinates>
@@ -870,7 +824,7 @@
       </Placemark>
       <Placemark>
         <name>Tjeldbergtind 步道</name>
-        <description><![CDATA[Tjeldberg<br> Tjeld：可能源自古挪威語，與「海鳥（特別是燕鷗）」有關，也可能是古地名或家族名。<br> berg：挪威語意思是「山」或「岩山」，對應英文的 mountain 或 rock。<br>tind：<br> 挪威語意思是「山峰」「尖峰」，對應英文 peak]]></description>
+        <description><![CDATA[Tjeldberg<br> Tjeld：可能源自古挪威語，與「海鳥（特別是燕鷗）」有關，也可能是古地名或家族名。<br> berg：挪威語意思是「山」或「岩山」，對應英文的 mountain 或 rock。<br>tind：<br> 挪威語意思是「山峰」「尖峰」，對應英文 peak<br>來回約4.5km，健⾏時間約2-3⼩時，最⾼海拔326m, 最低海拔63m]]></description>
         <styleUrl>#icon-1899-0288D1</styleUrl>
         <Point>
           <coordinates>
@@ -899,7 +853,8 @@
       </Placemark>
       <Placemark>
         <name>Lofotr Viking Museum</name>
-        <styleUrl>#icon-1636-E65100-nodesc</styleUrl>
+        <description>維京時代這裡有⼀個富有⽽有權勢的酋⻑家族統治著這裡，留下珍貴的世界上最⻑的維京時代⻑屋，⻑屋經過全尺⼨完整重建，並以擬真的製品及環境重新創建。感受焦油和⽕的味道，看看⼯藝品、裝飾品和建築，彷復步⼊時光隧道回到1000多年前。</description>
+        <styleUrl>#icon-1636-E65100</styleUrl>
         <Point>
           <coordinates>
             13.7565835,68.2439568,0
@@ -907,8 +862,9 @@
         </Point>
       </Placemark>
       <Placemark>
-        <name>Haukland Beach</name>
-        <styleUrl>#icon-1521-FF5252-nodesc</styleUrl>
+        <name>Haukland Beach(豪克蘭海灘)</name>
+        <description>2021年被被《孤獨星球》評為「歐洲最佳海灘」。彷彿與世隔絕的海灘，寧靜這個詞常在您訪問時進⼊腦海。尖尖的花崗岩⼭峰聳⽴在乳⽩⾊的沙灘和藍寶⽯般的⼤海之上。⽔很冷(從不超過15°C)，但你還是會很想跳進去。也是秋冬追極光的熱點之⼀。</description>
+        <styleUrl>#icon-1521-FF5252</styleUrl>
         <Point>
           <coordinates>
             13.5287091,68.1986162,0
@@ -917,7 +873,7 @@
       </Placemark>
       <Placemark>
         <name>Reinebringen 步道</name>
-        <description><![CDATA[Reinebringen<br>= 「Reine 的山脊」或「Reine 村旁的山峰」]]></description>
+        <description><![CDATA[Reinebringen<br>= 「Reine 的山脊」或「Reine 村旁的山峰」<br>往返總⻑約2.8公⾥，原路來回，總海拔提升約448⽶，健⾏時間保留2-3⼩時<br>雷訥景觀健⾏ reinebringen trail ，⾃2019年後全⾯修葺，從步道起點出發單程1公⾥，跨越1678個台階，站在⼭頂上，⼩⼩的漁屋點綴在⼭與海的畫布之上，讓我們⽤不同的視⾓俯瞰羅浮敦的美。]]></description>
         <styleUrl>#icon-1899-0288D1</styleUrl>
         <Point>
           <coordinates>
@@ -926,8 +882,9 @@
         </Point>
       </Placemark>
       <Placemark>
-        <name>Viewpoint at Å</name>
-        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <name>奧鎮 Å </name>
+        <description>奧鎮 Å 位在莫斯克內斯島最西端，被稱為羅弗敦群島的盡頭，奧鎮曾經是⼀個傳統的漁村，村⺠們以捕獲鱈⿂為⽣。Å是⼀個有點⽼式的挪威單詞，意思是河流。Å其實是挪威字⺟表中的最後⼀個字⺟，這裡被⾦式世界紀錄列為世界上最短的名字。</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
         <Point>
           <coordinates>
             12.973548,67.877467,0
@@ -936,7 +893,8 @@
       </Placemark>
       <Placemark>
         <name>挪威漁村博物館</name>
-        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <description>船屋是挪威漁村博物館的珍貴館藏之⼀，館內同時收藏各式挪威傳統漁船，從兩個⼈劃的⼩四槳船，到三個⼈劃的六槳船，再到需要四個⼈劃的⼋槳船。還有⼀艘改裝過的帶⾺達電⼒的漁船，其歷史可以追溯到1915年。館內還珍藏各種捕⿂設備以及有關捕鯨業的展覽。</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
         <Point>
           <coordinates>
             12.9817483,67.8812452,0
@@ -986,21 +944,11 @@
       </Placemark>
       <Placemark>
         <name>Sverresborg Trøndelag Folk Museum</name>
-        <description><![CDATA[⾱雷堡特倫德拉格⺠俗博物館是⼀座露天<br>博物館，周圍⾵景如畫，在博物館範圍內劃分<br>了許多區域，在城市區，您將了解特隆赫姆迷<br>⼈的歷史；中世紀的哈爾特達倫⽊板教堂就是<br>其中的瑰寶。]]></description>
+        <description>斯⾱雷堡特倫德拉格⺠俗博物館是⼀座露天博物館，周圍⾵景如畫，在博物館範圍內劃分了許多區域，在城市區，您將了解特隆赫姆迷⼈的歷史；中世紀的哈爾特達倫⽊板教堂就是其中的瑰寶。</description>
         <styleUrl>#icon-1636-0288D1</styleUrl>
         <Point>
           <coordinates>
             10.3569019,63.4211886,0
-          </coordinates>
-        </Point>
-      </Placemark>
-      <Placemark>
-        <name>Kristiansten Fortress克⾥斯蒂安史坦堡壘</name>
-        <description>位於特隆赫姆以東的⼀座⼩⼭上，它是在 1681 年特隆赫姆城市⼤⽕之後建造的，以保護城市免受來⾃東⽅的攻擊。建築於1685年完⼯。1718年瑞典軍隊圍攻特隆赫姆時，成功防守了城市。堡壘於1816退役，現在是眺望城市景緻最佳的觀景台。</description>
-        <styleUrl>#icon-1523-0288D1</styleUrl>
-        <Point>
-          <coordinates>
-            10.4106565,63.426876,0
           </coordinates>
         </Point>
       </Placemark>
@@ -1016,7 +964,8 @@
       </Placemark>
       <Placemark>
         <name>挪威⽯油博物館Norwegian Petroleum Museum</name>
-        <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+        <description>博物館建於1999年，博物館外型刻意設計成仿鑽油平台的樣⼦，在裡⾯透過機具模型、影⽚、遊戲互動等設計，讓遊客得以了解⽯油的地質歷史、在北海發現⽯油的過程，並認識⽯油產業安全預防措施的重要性。更可以⼀覽斯堪地那維亞的⽯油開採史。</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
         <Point>
           <coordinates>
             5.7346906,58.9734642,0
@@ -1186,6 +1135,66 @@
         <Point>
           <coordinates>
             100.6054823,13.9150135,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>雷訥 Reine</name>
+        <description>位於歐洲E10⾼速公路旁的海⾓上，是當地貿易、漁業的中⼼，現在是熱⾨旅遊地，每年有成千上萬的遊客。挪威最⼤的周刊Allers將雷訥評選為「挪威最美麗的村莊」。雷訥的照⽚是許多⼈對羅弗敦群島的第⼀印象。</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            13.0887329,67.9323866,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>哈爾斯塔 Harstad</name>
+        <description>哈爾斯塔地處沿海⼭脈與峽灣之間，是⼀座歷史悠久的秀麗⼩鎮，市中⼼的規劃相當密集；沿著步道⼀路探索，欣賞⾊彩斑斕的歷史建築。本地也以美味的煙燻鮭⿂和新鮮草莓⽽聞名。</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            16.5397139,68.7985209,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>亨寧斯⾱爾 Henningsvaer</name>
+        <description><![CDATA[⾵景如畫，因為峽灣貫穿城鎮中央猶如⼀條天然運河，有「羅浮敦群島威尼斯」的美譽，由多個⼩島組成，擁有保存完好的傳統挪威村莊建築、咖啡館和餐廳、⽂藝畫廊和藝品店等，都被⼤海和參<br>差不⿑的⾼⼭所環繞。有⼈說它是羅弗敦群島最"時髦"的⼩鎮。]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            14.2072535,68.1541872,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>克⾥斯蒂安史坦堡壘Kristiansten Festning</name>
+        <description>位於特隆赫姆以東的⼀座⼩⼭上，它是在 1681 年特隆赫姆城市⼤⽕之後建造的，以保護城市免受來⾃東⽅的攻擊。建築於1685年完⼯。1718年瑞典軍隊圍攻特隆赫姆時，成功防守了城市。堡壘於1816退役，現在是眺望城市景緻最佳的觀景台。</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            10.4106565,63.426876,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>聖壇岩 Preikestolen</name>
+        <description><![CDATA[世界上最著名的徒步旅⾏之⼀。在2018年好萊塢電影«不可能的任務：全⾯⽡解 »露出後變得更加出名。平坦的懸崖頂矗⽴在呂瑟峽灣上⽅604⽶處，提供令⼈驚嘆的景⾊和戲劇性的拍照環境。列名CNN「世界50⼤⾃然奇景」之⼀。<br>到佈道台的徒步旅⾏總共⼋公⾥，往返需要四個⼩時。徒步旅⾏的海拔增加約 500⽶，有些路段很陡。由於這次徒步旅⾏被評為中等難度，在開始這次旅⾏之前，您應該有⼀些崎嶇地形的徒步旅⾏經驗。]]></description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            6.1375554,58.9917436,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>奧斯陸 Oslo</name>
+        <description>挪威的⾸都和最⼤城市，三⾯被群⼭、叢林、原野環抱，既有海濱城市的⾵情，也有⾼⼭下的雄渾氣息；還有瀰漫在城市中的⼈⽂之美，時尚與藝術在此碰撞。湖光⼭⾊與都市⾵貌在這裡共融，維京冒險家與表現主義藝術在這裡對話，古⽼⼜現代，⽂明⼜原始。</description>
+        <styleUrl>#icon-1899-0288D1</styleUrl>
+        <Point>
+          <coordinates>
+            10.752917,59.9126918,0
           </coordinates>
         </Point>
       </Placemark>
