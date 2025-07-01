@@ -82,6 +82,11 @@ function GetMap() {
     };
 
     L.control.layers(baseMaps, null, { collapsed: false }).addTo(map);
+    L.control.scale({
+      imperial: false,   // 只顯示公尺/公里
+      metric: true,
+      position: 'bottomleft' // 位置可改 'bottomright' 等
+    }).addTo(map);
 
     // 載入 KML
     fetch('https://cli1976.github.io/MyMap/2025Norway.kml?ver=' + Date.now())
