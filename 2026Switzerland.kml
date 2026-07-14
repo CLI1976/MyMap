@@ -422,7 +422,7 @@
       </Placemark>
       <Placemark>
         <name>Hotel Bahnhof Zermatt</name>
-        <description>8/1-8/4</description>
+        <description><![CDATA[8/1-8/4<br>直奔空氣清新的無車環保山城——策馬特！我們將搭乘經典的「高納葛拉特 (Gornergrat) 景觀火車」上山，並帶著孩子輕鬆步行至利菲爾湖 (Riffelsee)，捕捉馬特洪峰最經典的完美倒影<br>。 隔天，搭乘歐洲最高纜車直達「冰川天堂 (Glacier Paradise)」，帶您進入神祕冰宮探險；午後乘坐地下纜車前往 Sunnegga，漫步於最精華的五湖步道 (Stellisee)，將阿爾卑斯山的絕景盡收眼底<br>https://www.matterhornparadise.ch/en/experience/hiking/hiking-map]]></description>
         <styleUrl>#icon-1602-E65100</styleUrl>
         <Point>
           <coordinates>
@@ -512,7 +512,7 @@
       </Placemark>
       <Placemark>
         <name>Interlaken 因特拉肯</name>
-        <description>8/4-8/7</description>
+        <description><![CDATA[8/4-8/7<br>前進伯恩高地！我們將搭乘最新科技的「艾格快線 (Eiger Express)」纜車，以最快速度直達歐洲之巔——少女峰 (Jungfraujoch)，在雪地與冰宮中盡情玩耍<br>。 接著前往格林德瓦的 First 山區，挑戰懸崖步道，體力許可還能走到絕美的 Bachalpsee 高山湖泊！下山時，全家一起體驗刺激好玩的「山景滑板車 (Trottibike)」。若時間充裕，還能持 Swiss Travel Pass (STP) 免費搭乘遊船，巡遊寶石般的圖恩湖或布里恩茲湖]]></description>
         <styleUrl>#icon-1899-0288D1</styleUrl>
         <Point>
           <coordinates>
@@ -612,7 +612,7 @@
       </Placemark>
       <Placemark>
         <name>Luzern 陸森市</name>
-        <description><![CDATA[8/7-8/9<br>8/7 上午：搭乘琉森-因特拉肯快線 (Luzern-Interlaken Express)，這是黃金列車路線中最精華的湖景路段之一。<br>動線提示：持 STP 直接上車即可，建議坐在火車行進方向的「右側」，看布里恩茲湖與沿途瀑布的角度最完美。<br>下午：抵達琉森，漫步卡貝爾橋、垂死獅子像。]]></description>
+        <description><![CDATA[8/7-8/9<br>搭乘精華的「琉森-因特拉肯快線」，坐在列車右側，完美捕捉布里恩茲湖與沿途瀑布的風光。抵達琉森後，漫步於古色古香的卡貝爾橋與垂死獅子像前。 隔天展開「皮拉圖斯山 (Pilatus) 金色環遊」！這是一場海陸空大滿貫：STP 免費涵蓋遊船與巴士，並以半價體驗「世界最陡齒軌火車」與景觀纜車。傍晚還能到石丹峰欣賞夕陽，幸運的話還能遇見可愛土撥鼠]]></description>
         <styleUrl>#icon-1899-0288D1</styleUrl>
         <Point>
           <coordinates>
@@ -632,7 +632,7 @@
       </Placemark>
       <Placemark>
         <name>Schaffhausen沙夫豪森</name>
-        <description>8/9-8/11</description>
+        <description><![CDATA[8/9-8/11<br>最後一站來到沙夫豪森 (Schaffhausen)，欣賞古城區獨特的濕壁畫與鐘錶工藝，並透過南岸徒步與北岸遊船，超近距離感受歐洲最大瀑布——「萊茵瀑布 (Rhine Falls)」的水花與震撼，為這趟瑞士大環遊畫下完美句點]]></description>
         <styleUrl>#icon-1899-0288D1</styleUrl>
         <Point>
           <coordinates>
@@ -652,7 +652,7 @@
       </Placemark>
       <Placemark>
         <name>Zürich 蘇黎世</name>
-        <description>8/9</description>
+        <description><![CDATA[8/9<br>旅程尾聲，我們將在蘇黎世舊城區穿梭，體驗多段式齒軌纜車 (UBS Polybahn)，感受蘇黎世聯邦理工學院的學術氣息，俯瞰林登霍夫山的市區美景。 ]]></description>
         <styleUrl>#icon-1899-0288D1</styleUrl>
         <Point>
           <coordinates>
