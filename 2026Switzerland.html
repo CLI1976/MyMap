@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2026瑞士</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="leaflet/leaflet.css" />
+
+  <script src="leaflet/leaflet.js"></script>
+  <script src="leaflet-kmz-master/dist/leaflet-kmz.js"></script>
+  <script src="leaflet-kml-master/L.KML.js"></script>
+  <script src="tmcw-togeojson/togeojson.umd.js"></script>
+  <style>
+    html, body, #map { height: 100%; margin: 0; padding: 0; }
+    .label-text {
+      background: rgba(255, 250, 200, 0.9);
+      padding: 4px 6px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+      white-space: nowrap;
+      max-width: none;
+      display: inline-block;
+      pointer-events: none;
+    }
+    .leaflet-popup-content {
+      font-size: 14px;
+      background-color: rgba(255, 255, 240, 0.9);
+      padding: 8px;
+      line-height: 1.4;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .leaflet-popup-content strong {
+      display: block;
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script type='text/javascript'>
+function GetMap() {
+    var map = L.map('map', { center: [46.8, 8.2], zoom: 8 });
+
+    // OpenStreetMap
+    var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    });
+
+    // OpenTopoMap
+    var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data: © OpenStreetMap contributors, SRTM | Map style: © OpenTopoMap (CC-BY-SA)'
+    });
+
+    var thunderforestOutdoors = L.tileLayer('https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=423cffd53e69442fba4b0e1f8450251b', {
+     attribution: 'Maps © Thunderforest, Data © OpenStreetMap contributors'
+    });
+
+    // Esri WorldTopoMap
+    var esriTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles © Esri'
+    });
+
+    // 預設用 OSM
+    osmLayer.addTo(map);
+
+    // 加入底圖切換
+    var baseMaps = {
+      "OpenStreetMap": osmLayer,
+      "OpenTopoMap": topoLayer,
+      "Esri Topo": esriTopo,
+      "Thunderforest Outdoors": thunderforestOutdoors
+    };
+
+    L.control.layers(baseMaps, null, { collapsed: false }).addTo(map);
+    L.control.scale({
+      imperial: false,
+      metric: true,
+      position: 'bottomleft'
+    }).addTo(map);
+
+    // 載入 KML
+    fetch('https://cli1976.github.io/MyMap/2026Switzerland.kml?ver=' + Date.now())
+    .then(res => res.text())
+    .then(kmltext => {
+        const parser = new DOMParser();
+        const kml = parser.parseFromString(kmltext, 'text/xml');
+        const geojson = toGeoJSON.kml(kml);
+
+        L.geoJSON(geojson, {
+            style: function(feature) {
+              if (feature.geometry.type === "LineString") {
+                return { color: "blue", weight: 3 };
+              }
+            },
+            onEachFeature: function(feature, layer) {
+                if (feature.geometry.type === "Point") {
+                    const name = feature.properties?.name || '';
+                    if (name) {
+                        L.marker(layer.getLatLng(), {
+                            icon: L.divIcon({
+                                className: 'label-text',
+                                html: `<span>${name}</span>`,
+                                iconSize: null
+                            })
+                        }).addTo(map);
+                    }
+                }
+                // popup
+                let popupContent = '';
+                if (feature.properties?.name) {
+                    popupContent += `<strong>${feature.properties.name}</strong>`;
+                }
+                if (feature.properties?.description) {
+                    popupContent += `<br>${feature.properties.description}`;
+                }
+                if (popupContent) {
+                    layer.bindPopup(popupContent);
+                }
+            }
+        }).addTo(map);
+
+        // fit bounds
+        const bounds = L.geoJSON(geojson).getBounds();
+        map.fitBounds(bounds);
+    });
+
+    // 定位
+    map.locate({ setView: true, maxZoom: 16 });
+    map.on('locationfound', function(e) {
+      L.marker(e.latlng).addTo(map)
+        .bindPopup("你現在在這裡！").openPopup();
+    });
+    map.on('locationerror', function(e) {
+      alert("無法取得你的定位：" + e.message);
+    });
+}
+
+window.onload = GetMap;
+</script>
+
+</body>
+</html>
